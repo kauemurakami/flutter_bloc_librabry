@@ -9,18 +9,17 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final _bloc = HomeBloc();
-
-
-  @override
-  void dispose() {
-    // TODO: implement dispose
-    _bloc.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
+    final _bloc = HomeBloc();
+
+    @override
+    void dispose() {
+      // TODO: implement dispose
+      super.dispose();
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: Text("flutter_bloc"),
@@ -47,12 +46,12 @@ class _HomePageState extends State<HomePage> {
       floatingActionButton: Row(
         children: <Widget>[
           FloatingActionButton(
-            onPressed: () =>  _bloc.onIncrement(),
+            onPressed: () =>  _bloc.onIncrement,
             tooltip: 'Increment',
             child: Icon(Icons.add),
           ),
           FloatingActionButton(
-            onPressed: () =>  _bloc.onDecrement(),
+            onPressed: () =>  _bloc.onDecrement,
             tooltip: 'Decrement',
             child: Icon(Icons.remove),
           ),

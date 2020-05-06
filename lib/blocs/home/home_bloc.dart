@@ -20,8 +20,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       HomeState currentState, HomeEvent event) async* {
     if (event is IncrementEvent) {
       yield currentState..counter += 1;
-    }
-    if (event is DecrementEvent) {
+    }else if (event is DecrementEvent) {
       yield currentState..counter -= 1;
     }
   }
